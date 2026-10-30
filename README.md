@@ -1,16 +1,74 @@
-# Atm
-ATM 1.0 — Dijital Bankacılık ve ATM Simülasyonu 🏦ATM 1.0, modern web teknolojileri ve FastAPI altyapısı kullanılarak geliştirilmiş, tek dosya halinde çalışan tam kapsamlı bir eğitim amaçlı ATM/dijital bankacılık simülasyonudur. Arka planda güvenli şifreleme mekanizmaları ve veritabanı yönetimi barındırırken, ön planda tek sayfalık (SPA) modern ve şık bir arayüz sunar.
-✨ Özellikler
-🔐 Güvenli Kimlik Doğrulama: PBKDF2-HMAC-SHA256 tabanlı şifre hashleme ve oturum yönetimi (Session TTL).
-💰 Kapsamlı Hesap Yönetimi: Vadesiz ve birikim hesapları arasında bakiye takibi ve aktarımı.
-💸 Para Çekme ve Yatırma: ATM banknot simülasyonu (200 TL, 100 TL vb.), günlük çekim/transfer limitleri kontrolü.⇄ Hesaplar Arası Transfer: T.C. Kimlik numarası ile anlık havale simülasyonu.
-▦ Fatura Ödeme: Elektrik, su, doğalgaz ve internet faturası ödeme simülasyonu.
-▤ İşlem Geçmişi ve Raporlama: Gelişmiş filtreleme, arama, sayfalama ve CSV formatında dışa aktarma (Export) desteği.⚙ Güvenlik Ayarları: PIN değiştirme, başarısız denemelerde hesap bloke koruması.
-📱 Modern Arayüz: Responsive (mobil uyumlu), karanlık/açık modern tasarım diline sahip gömülü HTML/CSS/JS arayüzü.
-👥 Demo HesaplarUygulamayı ilk çalıştırdığınızda veritabanına otomatik olarak şu test hesapları eklenir:Hesap AdıT.C. Kimlik Numarası (TCKN)PINDemo Kullanıcı111111111111234Ayşe Demir222222222220000
-🚀 Kurulum ve ÇalıştırmaProjeyi çalıştırabilmek için bilgisayarınızda Python 3.8+ yüklü olmalıdır.Depoyu klonlayın veya Atm 1.0.py dosyasını bilgisayarınıza indirin.Gerekli kütüphaneleri yüklemek için terminalde şu komutu çalıştırın:pip install fastapi uvicorn sqlalchemy
-Uygulamayı başlatın:python "Atm 1.0.py"
-Tarayıcınızı açın ve aşağıdaki adrese gidin:
-👉 http://127.0.0.1:8000🛠️ Kullanılan TeknolojilerBackend: Python, FastAPI, Uvicorn, SQLAlchemy, PydanticVeritabanı: SQLite (atm_v2.db)Frontend: HTML5, CSS3 (Modern Flexbox/Grid ve Custom Properties), Vanilla JavaScript (SPA yapısı)Güvenlik: hashlib, hmac, secrets (PBKDF2 hashing)
-⚠️ Yasal / Eğitim Amaçlı UyarıBu uygulama yalnızca eğitim, portfolyo ve prototip geliştirme amacıyla tasarlanmıştır. Gerçek bankacılık işlemleriyle hiçbir bağı yoktur ve gerçek finansal veriler veya gerçek TCKN'ler kullanılmamalıdır.
-📄 LisansBu proje eğitim amaçlı açık kaynaklı olarak paylaşılmıştır. Dilediğiniz gibi geliştirebilir ve kullanabilirsiniz.
+# 🏦 ATM 1.0 — Digital Banking and ATM Simulation
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+
+A full-stack, educational ATM and digital banking simulation built with modern web technologies and FastAPI, running as a single-file application.
+
+</div>
+
+---
+
+## ✨ Features
+
+* **🔐 Secure Authentication:** PBKDF2-HMAC-SHA256 based password hashing and session management (Session TTL).
+* **💰 Comprehensive Account Management:** Real-time balance tracking across checking and savings accounts.
+* **💸 Cash Withdrawal & Deposit:** ATM banknote simulation (200 TL, 100 TL, etc.) with daily withdrawal/transfer limits enforcement.
+* **⇄ Inter-Account Transfers:** Instant money transfer simulation using Turkish ID Numbers (TCKN).
+* **▦ Bill Payments:** Simulation for electricity, water, natural gas, and internet bills.
+* **▤ Transaction History & Reporting:** Advanced filtering, searching, pagination, and **CSV export** support.
+* **⚙ Security Settings:** PIN change functionality and account lockout protection after consecutive failed attempts.
+* **📱 Modern SPA Interface:** Responsive, dark/light theme-supported modern embedded HTML/CSS/JS frontend.
+
+---
+
+## 👥 Demo Accounts
+
+The following test accounts are automatically seeded into the database upon the first launch of the application:
+
+| Account Name | Turkish ID Number (TCKN) | PIN |
+| :--- | :--- | :--- |
+| **Demo User** | `11111111111` | `1234` |
+| **Ayşe Demir** | `22222222222` | `0000` |
+
+---
+
+## 🚀 Installation & Running
+
+Follow these steps to run the project locally:
+
+### 1. Prerequisites
+Make sure **Python 3.8+** is installed on your system.
+
+### 2. Clone or Download
+Download or clone the project files to your local machine (e.g., `Atm 1.0.py`).
+
+### 3. Install Dependencies
+Open your terminal or command prompt and run the following command:
+```bash
+pip install fastapi uvicorn sqlalchemy pydantic
+
+
+5. Open in Browser
+Open your browser and navigate to:
+👉 http://127.0.0.1:8000
+
+🛠️ Tech Stack
+Backend: Python, FastAPI, Uvicorn, SQLAlchemy, Pydantic
+
+Database: SQLite (atm_v2.db)
+
+Frontend: HTML5, CSS3 (Modern Flexbox/Grid & Custom Properties), Vanilla JavaScript (SPA Architecture)
+
+Security: hashlib, hmac, secrets (PBKDF2 Hashing)
+
+⚠️ Legal / Educational Disclaimer
+This application is designed solely for educational, portfolio, and prototype development purposes. It has no affiliation with any real banking systems, and real financial data or genuine TCKNs must never be used.
+
+📄 License
+This project is open-source and shared for educational purposes. Feel free to modify, enhance, and use it as you wish.
+
